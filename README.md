@@ -22,11 +22,16 @@
 ## Election-Audit Summary
 * These results were generated using tools such as Python and Visual Studio Code to indentify the overall winner of the election using the data provided from "election_results.csv".
 * A business recommendation to the election commission is to recycle this code for future elections.
-   * Two Modifications will be needed:
-     * Modification 1: Need to modify the path to the new data of the next election
+  * Small Modifications will be needed to reuse code for future analysis.
+* **Modification 1:** Need to modify the path to the new data of the next election
 ```
 # Add a variable to load a file from a path
 file_to_load = os.path.join("Resources", "election_results.csv")
 ```
-     
-   * Modification 2:
+* **Modification 2:** Raw data within ".csv" file will need to match current formatting of "election_results.csv" otherwise modifcations will be needed for the following code.
+```
+# Get the candidate name from each row.
+candidate_name = row[2]
+# Extract the county name from each row.
+county_name = row[1]
+```
